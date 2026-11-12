@@ -55,13 +55,15 @@ Python training accuracy: 80.02%.
 The Kaggle test dataset does not contain true survival labels. Therefore, a separate holdout split of the labeled training dataset is used to estimate performance on unseen data.
 
 ## Testing Status
-
-- Python analysis executed successfully locally.
-- R analysis executed successfully locally using R 4.6.1.
+- Python analysis executed successfully locally and in Docker.
+- R analysis executed successfully locally and in Docker.
 - Python training accuracy: 80.02%.
+- Python holdout accuracy: 80.45%.
 - R training accuracy: 79.80%.
 - R holdout accuracy: 75.98%.
-- Docker builds and container execution have not yet been verified.
+- Python Docker build and run: Successful.
+- R Docker build and run: Successful.
+
 
 ## Notes
 The dataset is excluded from Git using `.gitignore`, so it must be downloaded before building the Docker images.
