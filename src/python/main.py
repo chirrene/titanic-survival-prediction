@@ -5,8 +5,15 @@ import numpy as np
 from pathlib import Path
 from sklearn.linear_model import LogisticRegression
 
-data_path = Path(__file__).resolve().parent.parent / "data"
+data_path = Path(__file__).resolve().parent / "data"
 
+script_path = Path(__file__).resolve().parent
+if (script_path / "data").exists():
+    data_path = script_path / "data"      # Docker
+else:
+    data_path = script_path.parent / "data"  # Mac
+
+# Load training dataset
 train = pd.read_csv(data_path / "train.csv")
 
 print("Training data shape:", train.shape)
